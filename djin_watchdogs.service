@@ -1,0 +1,14 @@
+[Unit]
+Description=DJIN Watch Dogs Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/deno run --allow-run --allow-read --allow-net --allow-write /path/to/djin_watchdogs.ts
+Restart=always
+WorkingDirectory=/path/to
+User=your-username
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
